@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<materialx version="1.38">
+  <surfacematerial name="Jade" type="material" xpos="9.009907731593655" ypos="1.0610763880654646">
+    <input name="surfaceshader" type="surfaceshader" nodename="Surface" />
+  </surfacematerial>
+  <combine3 name="Emission_Color" type="color3" xpos="0.9476911681001241" ypos="1.0552616441957485">
+    <input name="in1" type="float" value="1" />
+    <input name="in2" type="float" value="1" />
+    <input name="in3" type="float" value="1" />
+  </combine3>
+  <surface_unlit name="Surface_unlit" type="surfaceshader" xpos="2.2061145952660555" ypos="2.837830482375163">
+    <input name="emission" type="float" value="1" />
+    <input name="emission_color" type="color3" value="1, 1, 1" nodename="Multiply" />
+    <input name="transmission" type="float" value="0" />
+    <input name="transmission_color" type="color3" value="1, 1, 1" />
+    <input name="opacity" type="float" value="1" nodename="Extract" />
+  </surface_unlit>
+  <image name="Image" type="color4" xpos="-5.252112837085629" ypos="3.309066051055132">
+    <input name="file" type="filename" value="C:/Users/abask/Desktop/MaterialX_Shaders/Textures/rename.png" colorspace="srgb_texture" />
+    <input name="layer" type="string" value="" />
+    <input name="default" type="color4" value="1, 1, 1, 1" />
+    <input name="texcoord" type="vector2" value="0, 0" />
+    <input name="uaddressmode" type="string" value="periodic" />
+    <input name="vaddressmode" type="string" value="periodic" />
+    <input name="filtertype" type="string" value="linear" />
+    <input name="framerange" type="string" value="" />
+    <input name="frameoffset" type="integer" value="0" />
+    <input name="frameendaction" type="string" value="constant" />
+  </image>
+  <multiply name="Multiply" type="color3" xpos="-0.08266165909558915" ypos="2.764878395301001">
+    <input name="in1" type="color3" value="0, 0, 0" />
+    <input name="in2" type="color3" value="1, 1, 1" nodename="Convert" />
+  </multiply>
+  <extract name="Extract" type="float" xpos="-1.7558368239424107" ypos="5.37842678943299">
+    <input name="in" type="color4" value="0, 0, 0, 9.0664e-43" nodename="Image" />
+    <input name="index" type="integer" value="3" />
+  </extract>
+  <nodegraph name="NG_main" xpos="0.0" ypos="0.0" />
+  <convert name="Convert" type="color3" xpos="-2.2429938684050184" ypos="3.7519135208426717">
+    <input name="in" type="color4" value="0, 0, 0, 0" nodename="Image" />
+  </convert>
+  <LamaDiffuse name="Lamadiffuse" type="BSDF" xpos="3.73932182538275" ypos="1.0309345219513193">
+    <input name="color" type="color3" value="0.18, 0.18, 0.18" nodename="Emission_Color" />
+    <input name="roughness" type="float" value="0" />
+    <input name="normal" type="vector3" value="0, 0, 0" />
+    <input name="energyCompensation" type="float" value="1" />
+    <input name="lobeName" type="string" value="diffuse" />
+    <input name="matte" type="string" value="" />
+  </LamaDiffuse>
+  <surface name="Surface" type="surfaceshader" xpos="6.5721287412772345" ypos="1.0444388721966555">
+    <input name="bsdf" type="BSDF" nodename="Lamadiffuse" />
+    <input name="edf" type="EDF" />
+    <input name="opacity" type="float" value="1" />
+  </surface>
+</materialx>

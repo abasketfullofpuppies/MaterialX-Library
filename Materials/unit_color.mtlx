@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<materialx version="1.38">
+  <surfacematerial name="Jade" type="material" xpos="4.630435" ypos="0.560345">
+    <input name="surfaceshader" type="surfaceshader" nodename="Surface_unlit" />
+  </surfacematerial>
+  <combine3 name="Emission_Color" type="color3" xpos="-4.782609" ypos="0.5">
+    <input name="in1" type="float" value="1" />
+    <input name="in2" type="float" value="1" />
+    <input name="in3" type="float" value="1" />
+  </combine3>
+  <surface_unlit name="Surface_unlit" type="surfaceshader" xpos="-0.326087" ypos="1.051724">
+    <input name="emission" type="float" value="1" />
+    <input name="emission_color" type="color3" value="1, 1, 1" nodename="Emission_Color" />
+    <input name="transmission" type="float" value="0" />
+    <input name="transmission_color" type="color3" value="1, 1, 1" />
+    <input name="opacity" type="float" value="1" />
+  </surface_unlit>
+  <nodegraph name="NG_main" xpos="0.0" ypos="0.0" />
+</materialx>
