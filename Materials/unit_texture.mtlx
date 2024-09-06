@@ -1,22 +1,19 @@
 <?xml version="1.0"?>
-<materialx version="1.38">
-  <surfacematerial name="Jade" type="material" xpos="5.399139055705767" ypos="2.821239281487549">
-    <input name="surfaceshader" type="surfaceshader" nodename="Surface_unlit" />
-  </surfacematerial>
-  <combine3 name="Emission_Color" type="color3" xpos="-4.782609" ypos="0.5">
+<materialx version="1.38" xpos="0.0555556" ypos="0.0555556">
+  <combine3 name="Emission_Color" type="color3" xpos="-4.78261" ypos="0.5">
     <input name="in1" type="float" value="1" />
     <input name="in2" type="float" value="1" />
     <input name="in3" type="float" value="1" />
   </combine3>
-  <surface_unlit name="Surface_unlit" type="surfaceshader" xpos="2.2061145952660555" ypos="2.837830482375163">
+  <surface_unlit name="Surface_unlit_texture" type="surfaceshader" xpos="2.20096" ypos="2.83783">
     <input name="emission" type="float" value="1" />
     <input name="emission_color" type="color3" value="1, 1, 1" nodename="Multiply" />
     <input name="transmission" type="float" value="0" />
     <input name="transmission_color" type="color3" value="1, 1, 1" />
     <input name="opacity" type="float" value="1" />
   </surface_unlit>
-  <image name="Image" type="color3" xpos="-4.719569353746715" ypos="3.202914100408565">
-    <input name="file" type="filename" value="C:/Users/abask/Desktop/MaterialX_Shaders/Textures/checker.png" colorspace="srgb_texture" />
+  <image name="Image" type="color3" xpos="-4.71957" ypos="3.20291" Autodesk-previousTexturePath="C:/Users/Gabe/Documents/GitHub/MaterialX-Library/Textures/checker.png">
+    <input name="file" type="filename" value="C:/Users/Gabe/Documents/GitHub/MaterialX-Library/Textures/checker.png" colorspace="sRGB" />
     <input name="layer" type="string" value="" />
     <input name="default" type="color3" value="1, 1, 1" />
     <input name="texcoord" type="vector2" value="0, 0" />
@@ -27,9 +24,12 @@
     <input name="frameoffset" type="integer" value="0" />
     <input name="frameendaction" type="string" value="constant" />
   </image>
-  <multiply name="Multiply" type="color3" xpos="-0.4344904965684386" ypos="2.4889216175409135">
+  <multiply name="Multiply" type="color3" xpos="-0.434491" ypos="2.48892">
     <input name="in1" type="color3" value="0, 0, 0" nodename="Emission_Color" />
     <input name="in2" type="color3" value="1, 1, 1" nodename="Image" />
   </multiply>
-  <nodegraph name="NG_main" xpos="0.0" ypos="0.0" />
+  <nodegraph name="NG_main" xpos="0" ypos="0" />
+  <surfacematerial name="Surface_M_unlit_texture" type="material" nodedef="ND_surfacematerial" xpos="4.69683" ypos="2.34214">
+    <input name="surfaceshader" type="surfaceshader" nodename="Surface_unlit_texture" />
+  </surfacematerial>
 </materialx>
