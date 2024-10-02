@@ -1,17 +1,5 @@
 <?xml version="1.0"?>
 <materialx version="1.38" xpos="2.54167" ypos="-1.2" ClipboardMetadata-documentName="unreal_test">
-  <separate3 name="separate2" type="multioutput" nodedef="ND_separate3_color3" Autodesk-hidden="true" />
-  <separate3 name="separate3" type="multioutput" nodedef="ND_separate3_color3" Autodesk-hidden="true" />
-  <separate3 name="separate5" type="multioutput" nodedef="ND_separate3_vector3" Autodesk-hidden="true" />
-  <separate3 name="separate6" type="multioutput" nodedef="ND_separate3_vector3" Autodesk-hidden="true" />
-  <separate3 name="separate4" type="multioutput" nodedef="ND_separate3_color3" Autodesk-hidden="true" />
-  <separate3 name="separate7" type="multioutput" nodedef="ND_separate3_color3" Autodesk-hidden="true" />
-  <separate3 name="separate8" type="multioutput" nodedef="ND_separate3_vector3" Autodesk-hidden="true" />
-  <separate3 name="separate9" type="multioutput" nodedef="ND_separate3_vector3" Autodesk-hidden="true" />
-  <separate3 name="separate10" type="multioutput" nodedef="ND_separate3_color3" Autodesk-hidden="true" />
-  <separate3 name="separate11" type="multioutput" nodedef="ND_separate3_color3" Autodesk-hidden="true" />
-  <separate3 name="separate12" type="multioutput" nodedef="ND_separate3_vector3" Autodesk-hidden="true" />
-  <separate3 name="separate13" type="multioutput" nodedef="ND_separate3_vector3" Autodesk-hidden="true" />
   <surface_unlit name="unlit_shader" type="surfaceshader" nodedef="ND_surface_unlit" xpos="2.58541" ypos="0.310331">
     <input name="emission_color" type="color3" output="out" nodegraph="Lerp" />
   </surface_unlit>
