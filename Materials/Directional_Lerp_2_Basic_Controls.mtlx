@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<materialx version="1.38" xpos="2.54167" ypos="-1.2" ClipboardMetadata-documentName="unreal_test">
+  <separate3 name="separate2" type="multioutput" nodedef="ND_separate3_color3" Autodesk-hidden="true" />
+  <separate3 name="separate3" type="multioutput" nodedef="ND_separate3_color3" Autodesk-hidden="true" />
+  <separate3 name="separate5" type="multioutput" nodedef="ND_separate3_vector3" Autodesk-hidden="true" />
+  <separate3 name="separate6" type="multioutput" nodedef="ND_separate3_vector3" Autodesk-hidden="true" />
+  <separate3 name="separate4" type="multioutput" nodedef="ND_separate3_color3" Autodesk-hidden="true" />
+  <separate3 name="separate7" type="multioutput" nodedef="ND_separate3_color3" Autodesk-hidden="true" />
+  <separate3 name="separate8" type="multioutput" nodedef="ND_separate3_vector3" Autodesk-hidden="true" />
+  <separate3 name="separate9" type="multioutput" nodedef="ND_separate3_vector3" Autodesk-hidden="true" />
+  <surface_unlit name="unlit_shader" type="surfaceshader" nodedef="ND_surface_unlit" xpos="2.24315" ypos="-0.783378">
+    <input name="emission_color" type="color3" output="out" nodegraph="Lerp" />
+  </surface_unlit>
+  <surfacematerial name="Directional_Lerp_2_Basic_Controls" type="material" nodedef="ND_surfacematerial" xpos="3.93373" ypos="-0.916711">
+    <input name="surfaceshader" type="surfaceshader" nodename="unlit_shader" />
+  </surfacematerial>
+  <separate3 name="separate10" type="multioutput" nodedef="ND_separate3_color3" Autodesk-hidden="true" />
+  <separate3 name="separate11" type="multioutput" nodedef="ND_separate3_color3" Autodesk-hidden="true" />
+  <nodegraph name="Lerp" xpos="0.0719272" ypos="-0.391403" Autodesk-ldx_inputPos="-356 -3" Autodesk-ldx_outputPos="848.902 29.1988">
+    <input name="Color_0" type="color3" uisoftmin="0,0,0" uisoftmax="1,1,1" ldx_value="0, 0, 0" nodename="Base_Color" />
+    <input name="Color_1" type="color3" uisoftmin="0,0,0" uisoftmax="1,1,1" ldx_value="0, 0, 0" nodename="Overlay_Color" />
+    <input name="Alpha" type="float" uisoftmin="0.0" uisoftmax="1.0" ldx_value="1" nodename="power5" />
+    <subtract name="subtract1" type="color3" nodedef="ND_subtract_color3" xpos="-0.0606767" ypos="-0.825028">
+      <input name="in2" type="color3" interfacename="Color_0" />
+      <input name="in1" type="color3" interfacename="Color_1" />
+    </subtract>
+    <multiply name="multiply1" type="color3" nodedef="ND_multiply_color3FA" xpos="1.47822" ypos="0.424973">
+      <input name="in1" type="color3" nodename="subtract1" />
+      <input name="in2" type="float" interfacename="Alpha" />
+    </multiply>
+    <add name="add1" type="color3" nodedef="ND_add_color3" xpos="3.17267" ypos="-0.441693">
+      <input name="in2" type="color3" nodename="multiply1" />
+      <input name="in1" type="color3" interfacename="Color_0" />
+    </add>
+    <output name="out" type="color3" nodename="add1" />
+    <backdrop name="Lerp" xpos="-0.271787" ypos="-1.25281" width="4.75001" height="2.83889" />
+  </nodegraph>
+  <normal name="world_normal" type="vector3" nodedef="ND_normal_vector3" xpos="-8.74205" ypos="0.105847">
+    <input name="space" type="string" value="world" />
+  </normal>
+  <dotproduct name="dotproduct4" type="float" nodedef="ND_dotproduct_vector3" xpos="-7.03506" ypos="-0.448103">
+    <input name="in2" type="vector3" nodename="world_normal" />
+    <input name="in1" type="vector3" ldx_value="0, 1, 0" nodename="Unreal_Up" />
+  </dotproduct>
+  <constant name="Blend_Falloff_Sharpness" type="float" nodedef="ND_constant_float" xpos="-3.57387" ypos="2.39446">
+    <input name="value" type="float" value="1" />
+  </constant>
+  <add name="add6" type="float" nodedef="ND_add_float" xpos="-5.24047" ypos="0.8945">
+    <input name="in2" type="float" ldx_value="1" nodename="Offset" />
+    <input name="in1" type="float" nodename="dotproduct4" />
+  </add>
+  <clamp name="clamp6" type="float" nodedef="ND_clamp_float" xpos="-3.57387" ypos="0.727839">
+    <input name="in" type="float" nodename="add6" />
+  </clamp>
+  <power name="power5" type="float" nodedef="ND_power_float" xpos="-1.90717" ypos="0.8945">
+    <input name="in2" type="float" ldx_value="200" nodename="Blend_Falloff_Sharpness" />
+    <input name="in1" type="float" nodename="clamp6" />
+  </power>
+  <constant name="Offset" type="float" nodedef="ND_constant_float" xpos="-5.24047" ypos="2.39446">
+    <input name="value" type="float" value="0" />
+  </constant>
+  <separate3 name="separate12" type="multioutput" nodedef="ND_separate3_vector3" Autodesk-hidden="true" />
+  <constant name="Base_Color" type="color3" nodedef="ND_constant_color3" xpos="-4.10419" ypos="-2.40393">
+    <input name="value" type="color3" value="0, 0, 0" />
+  </constant>
+  <constant name="Overlay_Color" type="color3" nodedef="ND_constant_color3" xpos="-4.12293" ypos="-0.877206">
+    <input name="value" type="color3" value="1, 1, 1" />
+  </constant>
+  <separate3 name="separate13" type="multioutput" nodedef="ND_separate3_vector3" Autodesk-hidden="true" />
+  <constant name="Maya_Up" type="vector3" nodedef="ND_constant_vector3" xpos="-10.6543" ypos="-0.960456">
+    <input name="value" type="vector3" value="0, 1, 0" />
+  </constant>
+  <constant name="Unreal_Up" type="vector3" nodedef="ND_constant_vector3" xpos="-8.91067" ypos="-1.02511">
+    <input name="value" type="vector3" value="0, 0, 1" />
+  </constant>
+</materialx>
