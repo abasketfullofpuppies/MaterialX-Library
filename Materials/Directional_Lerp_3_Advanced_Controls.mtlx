@@ -1,13 +1,11 @@
 <?xml version="1.0"?>
-<materialx version="1.38" xpos="2.54167" ypos="-1.2" ClipboardMetadata-documentName="unreal_test">
+<materialx version="1.38" xpos="0.0555556" ypos="0.0555556">
   <surface_unlit name="unlit_shader" type="surfaceshader" nodedef="ND_surface_unlit" xpos="2.58541" ypos="0.310331">
     <input name="emission_color" type="color3" output="out" nodegraph="Lerp" />
   </surface_unlit>
   <surfacematerial name="Directional_Lerp_3_Advanced_Controls" type="material" nodedef="ND_surfacematerial" xpos="4.27599" ypos="0.176998">
     <input name="surfaceshader" type="surfaceshader" nodename="unlit_shader" />
   </surfacematerial>
-  <separate3 name="separate14" type="multioutput" nodedef="ND_separate3_color3" Autodesk-hidden="true" />
-  <separate3 name="separate15" type="multioutput" nodedef="ND_separate3_color3" Autodesk-hidden="true" />
   <nodegraph name="Lerp" xpos="0.414187" ypos="0.702306" Autodesk-ldx_inputPos="-356 -3" Autodesk-ldx_outputPos="848.902 29.1988">
     <input name="Color_0" type="color3" uisoftmin="0,0,0" uisoftmax="1,1,1" ldx_value="0, 0, 0" nodename="Base_Color" />
     <input name="Color_1" type="color3" uisoftmin="0,0,0" uisoftmax="1,1,1" ldx_value="0, 0, 0" nodename="Overlay_Color" />
@@ -62,14 +60,12 @@
     <input name="in1" type="float" ldx_value="2" nodename="Snow_amount" />
     <input name="in2" type="float" value="2" />
   </min>
-  <separate3 name="separate16" type="multioutput" nodedef="ND_separate3_vector3" Autodesk-hidden="true" />
   <constant name="Base_Color" type="color3" nodedef="ND_constant_color3" xpos="-3.84802" ypos="-1.82678">
     <input name="value" type="color3" value="0, 0, 0" />
   </constant>
   <constant name="Overlay_Color" type="color3" nodedef="ND_constant_color3" xpos="-3.78067" ypos="0.216503">
     <input name="value" type="color3" value="1, 1, 1" />
   </constant>
-  <separate3 name="separate17" type="multioutput" nodedef="ND_separate3_vector3" Autodesk-hidden="true" />
   <constant name="Maya_Up" type="vector3" nodedef="ND_constant_vector3" xpos="-10.5874" ypos="-0.0247272">
     <input name="value" type="vector3" value="0, 1, 0" />
   </constant>

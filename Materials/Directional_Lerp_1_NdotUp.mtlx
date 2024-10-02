@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<materialx version="1.38" xpos="2.54167" ypos="-1.2" ClipboardMetadata-documentName="unreal_test">
+<materialx version="1.38" xpos="0.0555556" ypos="0.0555556">
   <surface_unlit name="unlit_shader" type="surfaceshader" nodedef="ND_surface_unlit" xpos="2.58541" ypos="0.310331">
     <input name="emission_color" type="color3" output="out" nodegraph="Lerp" />
   </surface_unlit>

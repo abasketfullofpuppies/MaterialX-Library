@@ -1,11 +1,9 @@
 <?xml version="1.0"?>
-<materialx version="1.38" xpos="2.54167" ypos="-1.2" ClipboardMetadata-documentName="unreal_test">
-  <surface_unlit name="unlit_shader" type="surfaceshader" nodedef="ND_surface_unlit" xpos="2.62524" ypos="0.932011">
+<materialx version="1.38" xpos="0.0555556" ypos="0.0555556">
+  <surface_unlit name="unlit_shader" type="surfaceshader" nodedef="ND_surface_unlit" xpos="2.55891" ypos="-0.0132476">
     <input name="emission_color" type="color3" output="out" nodegraph="Lerp" />
   </surface_unlit>
-  <separate3 name="separate174" type="multioutput" nodedef="ND_separate3_color3" Autodesk-hidden="true" />
-  <separate3 name="separate179" type="multioutput" nodedef="ND_separate3_color3" Autodesk-hidden="true" />
-  <nodegraph name="Lerp" xpos="0.414187" ypos="0.73985" Autodesk-ldx_inputPos="-356 -3" Autodesk-ldx_outputPos="848.902 29.1988">
+  <nodegraph name="Lerp" xpos="0.347853" ypos="-0.205409" Autodesk-ldx_inputPos="-356 -3" Autodesk-ldx_outputPos="848.902 29.1988">
     <input name="Color_0" type="color3" uisoftmin="0,0,0" uisoftmax="1,1,1" ldx_value="0, 0, 0" nodename="Base_Color" />
     <input name="Color_1" type="color3" uisoftmin="0,0,0" uisoftmax="1,1,1" ldx_value="0, 0, 0" nodename="Overlay_Color" />
     <input name="Alpha" type="float" uisoftmin="0.0" uisoftmax="1.0" ldx_value="1" nodename="power6" />
@@ -24,110 +22,103 @@
     <output name="out" type="color3" nodename="add1" />
     <backdrop name="Lerp" xpos="-0.271787" ypos="-1.25281" width="4.75001" height="2.83889" />
   </nodegraph>
-  <normal name="world_normal" type="vector3" nodedef="ND_normal_vector3" xpos="-8.91944" ypos="1.35917">
+  <normal name="world_normal" type="vector3" nodedef="ND_normal_vector3" xpos="-8.98578" ypos="0.413911">
     <input name="space" type="string" value="world" />
   </normal>
-  <dotproduct name="dotproduct4" type="float" nodedef="ND_dotproduct_vector3" xpos="-7.21222" ypos="0.805222">
+  <dotproduct name="dotproduct4" type="float" nodedef="ND_dotproduct_vector3" xpos="-7.27856" ypos="-0.140037">
     <input name="in2" type="vector3" nodename="world_normal" />
     <input name="in1" type="vector3" ldx_value="0, 1, 0" nodename="Unreal_Up" />
   </dotproduct>
-  <multiply name="Mult_100" type="float" nodedef="ND_multiply_float" xpos="-3.85232" ypos="1.98361">
+  <multiply name="Mult_100" type="float" nodedef="ND_multiply_float" xpos="-3.91866" ypos="1.03835">
     <input name="in2" type="float" value="100" />
     <input name="in1" type="float" ldx_value="100" nodename="Blend_Falloff_Sharpness1" />
   </multiply>
-  <max name="max_0_x" type="float" nodedef="ND_max_float" xpos="-2.43563" ypos="1.978">
+  <max name="max_0_x" type="float" nodedef="ND_max_float" xpos="-2.50197" ypos="1.03274">
     <input name="in1" type="float" nodename="Mult_100" />
   </max>
-  <constant name="Snow_amount" type="float" nodedef="ND_constant_float" xpos="-9.54222" ypos="2.66947">
+  <constant name="Snow_amount" type="float" nodedef="ND_constant_float" xpos="-9.60856" ypos="1.72422">
     <input name="value" type="float" value="1" />
   </constant>
-  <constant name="Blend_Falloff_Sharpness1" type="float" nodedef="ND_constant_float" xpos="-5.34112" ypos="1.93078">
+  <constant name="Blend_Falloff_Sharpness1" type="float" nodedef="ND_constant_float" xpos="-5.40746" ypos="0.985517">
     <input name="value" type="float" value="0.5666" />
   </constant>
-  <min name="min_2_x" type="float" nodedef="ND_min_float" xpos="-8.22139" ypos="2.66947">
+  <min name="min_2_x" type="float" nodedef="ND_min_float" xpos="-8.28772" ypos="1.72422">
     <input name="in1" type="float" ldx_value="2" nodename="Snow_amount" />
     <input name="in2" type="float" value="2" />
   </min>
-  <add name="add4" type="float" nodedef="ND_add_float" xpos="-6.99583" ypos="3.7895">
+  <add name="add4" type="float" nodedef="ND_add_float" xpos="-7.06217" ypos="2.84424">
     <input name="in1" type="float" nodename="min_2_x" />
     <input name="in2" type="float" nodename="mult" />
   </add>
-  <sin name="sin_noise" type="float" nodedef="ND_sin_float" xpos="-8.5845" ypos="5.41311">
+  <sin name="sin_noise" type="float" nodedef="ND_sin_float" xpos="-8.65083" ypos="4.46785">
     <input name="in" type="float" nodename="add5" />
   </sin>
-  <separate3 name="separate180" type="multioutput" nodedef="ND_separate3_vector3" Autodesk-hidden="true" />
-  <multiply name="mult" type="float" nodedef="ND_multiply_float" xpos="-7.0605" ypos="5.36528">
+  <multiply name="mult" type="float" nodedef="ND_multiply_float" xpos="-7.12683" ypos="4.42002">
     <input name="in1" type="float" nodename="sin_noise" />
     <input name="in2" type="float" ldx_value="0.10631" nodename="mult_pt_1_" />
   </multiply>
-  <multiply name="Mult_Noise" type="float" nodedef="ND_multiply_float" xpos="-11.4205" ypos="5.293">
+  <multiply name="Mult_Noise" type="float" nodedef="ND_multiply_float" xpos="-11.4868" ypos="4.34774">
     <input name="in2" type="float" ldx_value="1.269" nodename="Mult_2_pi_" />
     <input name="in1" type="float" nodename="separate182" output="outr" />
   </multiply>
-  <add name="add5" type="float" nodedef="ND_add_float" xpos="-9.94011" ypos="4.63416">
+  <add name="add5" type="float" nodedef="ND_add_float" xpos="-10.0064" ypos="3.6889">
     <input name="in2" type="float" nodename="Mult_Noise" />
     <input name="in1" type="float" ldx_value="70" nodename="Seed" />
   </add>
-  <constant name="Seed" type="float" nodedef="ND_constant_float" xpos="-11.3361" ypos="3.82878">
+  <constant name="Seed" type="float" nodedef="ND_constant_float" xpos="-11.3941" ypos="2.88352">
     <input name="value" type="float" value="75" />
   </constant>
-  <multiply name="Mult_2_pi_" type="float" nodedef="ND_multiply_float" xpos="-11.3553" ypos="6.47461">
+  <multiply name="Mult_2_pi_" type="float" nodedef="ND_multiply_float" xpos="-11.4216" ypos="5.52935">
     <input name="in2" type="float" value="6.25" />
     <input name="in1" type="float" nodename="Wavelength" />
   </multiply>
-  <constant name="Wavelength" type="float" nodedef="ND_constant_float" xpos="-14.7412" ypos="6.72456">
+  <constant name="Wavelength" type="float" nodedef="ND_constant_float" xpos="-14.8076" ypos="5.77933">
     <input name="value" type="float" value="1.3" />
   </constant>
-  <add name="add9" type="float" nodedef="ND_add_float" xpos="-5.08362" ypos="3.71783">
+  <add name="add9" type="float" nodedef="ND_add_float" xpos="-5.14996" ypos="2.77257">
     <input name="in2" type="float" ldx_value="1" nodename="dotproduct4" />
     <input name="in1" type="float" nodename="add4" />
   </add>
-  <clamp name="clamp7" type="float" nodedef="ND_clamp_float" xpos="-3.47584" ypos="3.70021">
+  <clamp name="clamp7" type="float" nodedef="ND_clamp_float" xpos="-3.54217" ypos="2.75495">
     <input name="in" type="float" nodename="add9" />
   </clamp>
-  <power name="power6" type="float" nodedef="ND_power_float" xpos="-1.85586" ypos="3.68466">
+  <power name="power6" type="float" nodedef="ND_power_float" xpos="-1.92219" ypos="2.7394">
     <input name="in2" type="float" ldx_value="200" nodename="max_0_x" />
     <input name="in1" type="float" nodename="clamp7" />
   </power>
-  <multiply name="mult_pt_1_" type="float" nodedef="ND_multiply_float" xpos="-7.10783" ypos="6.61261">
+  <multiply name="mult_pt_1_" type="float" nodedef="ND_multiply_float" xpos="-7.17417" ypos="5.66739">
     <input name="in2" type="float" value="0.1" />
     <input name="in1" type="float" nodename="Amplitude01" />
   </multiply>
-  <constant name="Amplitude01" type="float" nodedef="ND_constant_float" xpos="-8.6875" ypos="6.62506">
+  <constant name="Amplitude01" type="float" nodedef="ND_constant_float" xpos="-8.75383" ypos="5.67983">
     <input name="value" type="float" value="1" />
   </constant>
-  <constant name="Base_Color" type="color3" nodedef="ND_constant_color3" xpos="-3.84802" ypos="-1.78924">
+  <constant name="Base_Color" type="color3" nodedef="ND_constant_color3" xpos="-3.91436" ypos="-2.7345">
     <input name="value" type="color3" value="0, 0, 0" />
   </constant>
-  <constant name="Overlay_Color" type="color3" nodedef="ND_constant_color3" xpos="-3.78067" ypos="0.254046">
+  <constant name="Overlay_Color" type="color3" nodedef="ND_constant_color3" xpos="-3.84701" ypos="-0.691211">
     <input name="value" type="color3" value="1, 1, 1" />
   </constant>
-  <separate3 name="separate181" type="multioutput" nodedef="ND_separate3_vector3" Autodesk-hidden="true" />
-  <constant name="Maya_Up" type="vector3" nodedef="ND_constant_vector3" xpos="-9.06656" ypos="0.0883911">
+  <constant name="Maya_Up" type="vector3" nodedef="ND_constant_vector3" xpos="-9.13289" ypos="-0.856872">
     <input name="value" type="vector3" value="0, 1, 0" />
   </constant>
-  <constant name="Unreal_Up" type="vector3" nodedef="ND_constant_vector3" xpos="-9.32461" ypos="-0.880244">
+  <constant name="Unreal_Up" type="vector3" nodedef="ND_constant_vector3" xpos="-9.39094" ypos="-1.8255">
     <input name="value" type="vector3" value="0, 0, 1" />
   </constant>
-  <noise3d name="noise3d1" type="color3" nodedef="ND_noise3d_color3" xpos="-12.9052" ypos="3.75178" />
-  <texcoord name="texcoord1" type="vector2" nodedef="ND_texcoord_vector2" xpos="-14.8686" ypos="3.74605" />
-  <divide name="divide1" type="vector2" nodedef="ND_divide_vector2FA" xpos="-14.649" ypos="5.22855">
+  <noise3d name="noise3d1" type="color3" nodedef="ND_noise3d_color3" xpos="-12.9716" ypos="2.80652" />
+  <texcoord name="texcoord1" type="vector2" nodedef="ND_texcoord_vector2" xpos="-14.9349" ypos="2.80079" />
+  <divide name="divide1" type="vector2" nodedef="ND_divide_vector2FA" xpos="-14.7153" ypos="4.28329">
     <input name="in1" type="vector2" nodename="texcoord1" />
     <input name="in2" type="float" value="0.5" />
   </divide>
-  <image name="image1" type="color3" nodedef="ND_image_color3" xpos="-12.664" ypos="4.58395" Autodesk-previousTexturePath="C:/Users/Gabe/Documents/GitHub/MaterialX-Library/Textures/tileable_difference_noise.png">
+  <image name="image1" type="color3" nodedef="ND_image_color3" xpos="-12.7303" ypos="3.63869" Autodesk-previousTexturePath="C:/Users/Gabe/Documents/GitHub/MaterialX-Library/Textures/tileable_difference_noise.png">
     <input name="file" type="filename" value="C:/Users/Gabe/Documents/GitHub/MaterialX-Library/Textures/tileable_difference_noise.png" colorspace="Raw" />
     <input name="texcoord" type="vector2" nodename="divide1" />
     <input name="filtertype" type="string" value="linear" />
   </image>
-  <separate3 name="separate182" type="multioutput" nodedef="ND_separate3_color3" Autodesk-hidden="true">
     <input name="in" type="color3" nodename="image1" />
   </separate3>
-  <separate3 name="separate183" type="multioutput" nodedef="ND_separate3_color3" Autodesk-hidden="true" />
-  <separate3 name="separate184" type="multioutput" nodedef="ND_separate3_color3" Autodesk-hidden="true" />
-  <separate3 name="separate185" type="multioutput" nodedef="ND_separate3_vector3" Autodesk-hidden="true" />
-  <separate3 name="separate186" type="multioutput" nodedef="ND_separate3_vector3" Autodesk-hidden="true" />
-  <surfacematerial name="Directional_Lerp_4_Noise" type="material" nodedef="ND_surfacematerial" xpos="4.2822" ypos="-0.452828">
+  <surfacematerial name="Directional_Lerp_4_Noise" type="material" nodedef="ND_surfacematerial" xpos="4.21587" ypos="-1.39808">
     <input name="surfaceshader" type="surfaceshader" nodename="unlit_shader" />
   </surfacematerial>
 </materialx>
